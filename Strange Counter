@@ -1,0 +1,33 @@
+def strangeCounter(t):
+    # Write your code here
+    vp=3
+    ti=3
+    if t==1:
+        return 3
+    if t==2:
+        return 2
+    while(ti<t):
+        vn=2*vp
+        ti=ti+vn
+        if ti>=t:
+            if ti==t:
+                vn=1
+                break
+            else:
+                ti = ti-vn+1
+                break
+        else:
+            vp=vn
+    if ti==t:
+        return vn
+    else:
+        ti+=1
+        vn-=1
+        vn=vn-(t-ti)
+        return vn
+
+if __name__ == '__main__':
+    t = int(input().strip())
+
+    result = strangeCounter(t)
+    print(result)
